@@ -1,4 +1,4 @@
-/*  304.  POWER OF FOUR
+/*  342.  POWER OF FOUR
 
 Given an integer n, return true if it is a power of four. Otherwise, return false.
 
