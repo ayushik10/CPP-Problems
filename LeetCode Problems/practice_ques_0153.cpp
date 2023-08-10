@@ -37,8 +37,32 @@ nums is sorted and rotated between 1 and n times.         */
 class Solution {
 public:
     int findMin(vector<int>& nums) {
+        int s=0;
+        int e=nums.size()-1;
+        int minElement = INT_MAX;
+
+        while(s<=e) {
+            int mid=(s+e)/2;
+
+            if(nums[s] <= nums[mid]) {
+                minElement = min(minElement, nums[s]);
+                s = mid+1;
+            }
+            else {
+                minElement = min(minElement, nums[mid]);
+                e = mid-1;
+            }
+        }
+        return minElement;
+    }
+};
+
+
+/*class Solution {
+public:
+    int findMin(vector<int>& nums) {
         sort(nums.begin(), nums.end());
 
         return nums[0];
     }
-};
+}; */
